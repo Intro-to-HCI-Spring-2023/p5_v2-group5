@@ -56,7 +56,7 @@ class LandingPage extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'LOG IN',
+            'LOG in',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 20.0,
@@ -73,7 +73,7 @@ class LandingPage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7.0),
         border: Border.all(color: Colors.white),
-        color: Colors.white,
+        color: Colors.transparent,
       ),
       child: ElevatedButton(
         onPressed: () => Navigator.pushNamed(context, registerViewRoute),

@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       items: [
   BottomNavigationBarItem(
     icon: Icon(Icons.rss_feed),
-    label: 'Feed',
+    label: 'Feeds',
   ),
   BottomNavigationBarItem(
     icon: Icon(LineIcons.comments),
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   ),
   BottomNavigationBarItem(
     icon: Icon(LineIcons.bell),
-    label: 'Notifications',
+    label: 'Notification',
   ),
   BottomNavigationBarItem(
     icon: Icon(LineIcons.user),

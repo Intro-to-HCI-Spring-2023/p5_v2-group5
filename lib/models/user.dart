@@ -4,7 +4,7 @@ class User {
   int id;
   String name;
   String photo;
-  String location = 'Seattle, USA.';
+  String location = 'Hannover, USA.';
   String gender;
   int age;
 
