@@ -17,9 +17,7 @@ class ProfilePage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          _buildUserStats('VISITORS', '2305'),
-          _buildUserStats('LIKED', '276'),
-          _buildUserStats('MATCHED', '51'),
+          _buildUserStats('maxwell.s.owino.25@dartmouth.edu',' '),
         ],
       ),
     );
@@ -109,11 +107,11 @@ class ProfilePage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(Icons.favorite, Colors.red, 'Likes'),
+              _buildIconTile(LineIcons.cogs, Colors.red, 'Edit Personal Details'),
               hr,
-              _buildIconTile(LineIcons.eye, Colors.green, 'Visitors'),
+              _buildIconTile(LineIcons.money, Colors.green, 'Payment Settings'),
               hr,
-              _buildIconTile(LineIcons.users, Colors.purpleAccent, 'Groups'),
+              _buildIconTile(LineIcons.align_justify, Colors.purpleAccent, 'Verification Center'),
             ],
           ),
         ),
@@ -134,15 +132,12 @@ class ProfilePage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(LineIcons.money, Colors.red, 'My Wallet'),
+              _buildIconTile(LineIcons.hand_grab_o, Colors.red, 'Support & Help'),
               hr,
-              _buildIconTile(LineIcons.diamond, Colors.blue, 'VIP Center'),
+              _buildIconTile(LineIcons.mail_forward, Colors.blue, 'About Us'),
               hr,
-              _buildIconTile(LineIcons.user_plus, Colors.orangeAccent, 'Find Friends'),
+              _buildIconTile(LineIcons.user_plus, Colors.orangeAccent, 'Terms & Conditions'),
               hr,
-              _buildIconTile(LineIcons.user_times, Colors.black, 'Blacklist'),
-              hr,
-              _buildIconTile(LineIcons.cogs, Colors.grey.withOpacity(0.6), 'Settings'),
             ],
           ),
         ),

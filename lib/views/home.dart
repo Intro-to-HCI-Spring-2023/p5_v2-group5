@@ -14,8 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    FeedsPage(),
     ChatsPage(),
+    FeedsPage(),
     NotificationsPage(),
     ProfilePage()
   ];
@@ -35,18 +35,19 @@ class _HomePageState extends State<HomePage> {
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey.withOpacity(0.6),
       elevation: 0.0,
-      items: [
-  BottomNavigationBarItem(
-    icon: Icon(Icons.rss_feed),
-    label: 'Feeds',
-  ),
+      items: [  
   BottomNavigationBarItem(
     icon: Icon(LineIcons.comments),
     label: 'Chats',
   ),
   BottomNavigationBarItem(
-    icon: Icon(LineIcons.bell),
-    label: 'Notification',
+    icon: Icon(Icons.rss_feed),
+    label: 'Feeds',
+  ),
+
+  BottomNavigationBarItem(
+    icon: Icon(LineIcons.camera),
+    label: 'Scan',
   ),
   BottomNavigationBarItem(
     icon: Icon(LineIcons.user),

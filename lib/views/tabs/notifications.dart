@@ -10,7 +10,7 @@ class NotificationsPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
       child: Text(
-        "Notifications",
+        "Scan Receipt",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,
@@ -19,25 +19,90 @@ class NotificationsPage extends StatelessWidget {
       ),
     );
 
-    final image = Image.asset(
-      AvailableImages.emptyState['assetPath'],
+    final image = Transform.translate(
+      offset: Offset(0, -60), // Upwards shift by 60 pixels
+      child: Image.asset(
+        AvailableImages.emptyState['assetPath'],
+        height: 350,
+        width: 350,
+      ),
     );
 
-    final notificationHeader = Container(
-      padding: EdgeInsets.only(top: 30.0, bottom: 10.0),
-      child: Text(
-        "No New Notification",
-        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24.0),
+    final shootIconButton = Transform.translate(
+      offset: Offset(0, -35), // Upwards shift by 35 pixels
+      child: Container(
+        height: 100.0,
+        width: 100.0,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.blue,
+              Colors.lightBlueAccent,
+            ],
+          ),
+          shape: BoxShape.circle,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: RawMaterialButton(
+            onPressed: () {},
+            elevation: 2.0,
+            fillColor: Colors.white,
+            shape: CircleBorder(),
+            constraints: BoxConstraints.tightFor(
+              width: 70.0,
+              height: 70.0,
+            ),
+          ),
+        ),
       ),
     );
-    final notificationText = Text(
-      "You currently do not have any unread notifications.",
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 18.0,
-        color: Colors.grey.withOpacity(0.6),
+
+    final bottomButtons = Transform.translate(
+      offset: Offset(0, -35), // Upwards shift by 35 pixels
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+            ),
+            child: Text('Photo'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+            ),
+            child: Text('Scans'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              ),
+            ),
+            child: Text('Files'),
+          ),
+        ],
       ),
-      textAlign: TextAlign.center,
     );
 
     return Scaffold(
@@ -50,20 +115,28 @@ class NotificationsPage extends StatelessWidget {
         ),
         height: deviceHeight,
         width: deviceWidth,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            pageTitle,
-            SizedBox(
-              height: deviceHeight * 0.1,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[image, notificationHeader, notificationText],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              pageTitle,
+              SizedBox(
+                height: deviceHeight * 0.1,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  image,
+                  shootIconButton,
+                  SizedBox(height: 30.0),
+                  bottomButtons,
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

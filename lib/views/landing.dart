@@ -12,36 +12,42 @@ class LandingPage extends StatelessWidget {
       SystemUiOverlayStyle(statusBarColor: primaryColor),
     );
 
-    final logo = Container(
-      height: 100.0,
-      width: 100.0,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AvailableImages.appLogo,
-          fit: BoxFit.cover,
+    final logo = Padding(
+      padding: EdgeInsets.only(top: 50),
+      child: Container(
+        height: 100.0,
+        width: 100.0,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AvailableImages.appLogo,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
 
-    final appName = Column(
-      children: <Widget>[
-        Text(
-          AppConfig.appName,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 30.0,
+    final appName = Padding(
+      padding: EdgeInsets.only(top: 50),
+      child: Column(
+        children: <Widget>[
+          Text(
+            AppConfig.appName,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 30.0,
+            ),
           ),
-        ),
-        Text(
-          AppConfig.appTagline,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-            fontWeight: FontWeight.w500
-          ),
-        )
-      ],
+          Text(
+            AppConfig.appTagline,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+              fontWeight: FontWeight.w500
+            ),
+          )
+        ],
+      ),
     );
 
     final loginBtn = InkWell(
@@ -56,7 +62,7 @@ class LandingPage extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'LOG in',
+            'Continue!',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 20.0,
@@ -67,44 +73,15 @@ class LandingPage extends StatelessWidget {
       ),
     );
 
-    final registerBtn = Container(
-      height: 60.0,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(7.0),
-        border: Border.all(color: Colors.white),
-        color: Colors.transparent,
-      ),
-      child: ElevatedButton(
-        onPressed: () => Navigator.pushNamed(context, registerViewRoute),
-        child: Text(
-       'SIGN UP',
-       style: TextStyle(
-       fontWeight: FontWeight.w600,
-      fontSize: 20.0,
-    ),
-  ),
-  style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-    elevation: MaterialStateProperty.all<double>(5.0),
-    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(7.0),
-      ),
-    ),
-      ),
-    )
-    );
-
     final buttons = Padding(
       padding: EdgeInsets.only(
-        top: 80.0,
+        top: 50.0,   // Increased top padding
         bottom: 30.0,
         left: 30.0,
         right: 30.0,
       ),
       child: Column(
-        children: <Widget>[loginBtn, SizedBox(height: 20.0), registerBtn],
+        children: <Widget>[loginBtn, SizedBox(height: 20.0)],
       ),
     );
 

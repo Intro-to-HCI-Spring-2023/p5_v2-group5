@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-const primaryColor = const Color(0xFFfbab66);
-const primaryLight = const Color(0xFFFF9F59);
-const primaryDark = const Color(0xFFFF9F59);
+const primaryColor = const Color.fromARGB(255, 96, 181, 246);
+const primaryLight = const Color.fromARGB(255, 96, 181, 246);
+const primaryDark = const Color.fromARGB(255, 96, 181, 246);
 
-const secondaryColor = const Color(0xFFFF9F59);
-const secondaryLight = const Color(0xFFFF9F59);
-const secondaryDark = const Color(0xFFFF9F59);
+const secondaryColor = const Color.fromARGB(255, 89, 186, 255);
+const secondaryLight = const Color.fromARGB(255, 89, 186, 255);
+const secondaryDark = const Color.fromARGB(255, 89, 186, 255);
 
-const Color gradientStart = const Color(0xFFfbab66);
-const Color gradientEnd = const Color(0xFFf7418c);
+const Color gradientStart = Color.fromARGB(255, 102, 166, 251);
+const Color gradientEnd = Color.fromARGB(255, 53, 104, 185);
 
 const primaryGradient = const LinearGradient(
   colors: const [gradientStart, gradientEnd],
@@ -20,7 +20,7 @@ const primaryGradient = const LinearGradient(
 );
 
 const chatBubbleGradient = const LinearGradient(
-  colors: const [Color(0xFFFD60A3), Color(0xFFFF8961)],
+  colors: const [Color.fromARGB(255, 53, 104, 185), Color.fromARGB(255, 102, 166, 251)],
   begin: Alignment.topRight,
   end: Alignment.bottomLeft,
 );

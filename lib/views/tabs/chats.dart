@@ -13,7 +13,7 @@ class ChatsPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 20.0),
       child: Text(
-        "Chats",
+        "Messages",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,
