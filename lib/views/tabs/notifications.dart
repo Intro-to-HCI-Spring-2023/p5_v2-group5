@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social/utils/utils.dart';
+import 'package:flutter_social/views/select.dart';
+import 'package:flutter_social/views/summary.dart';
 
 class NotificationsPage extends StatelessWidget {
   @override
@@ -29,6 +31,7 @@ class NotificationsPage extends StatelessWidget {
     );
 
     final shootIconButton = Transform.translate(
+      
       offset: Offset(0, -35), // Upwards shift by 35 pixels
       child: Container(
         height: 100.0,
@@ -47,7 +50,12 @@ class NotificationsPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: RawMaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SelectPage()),
+              );
+            },
             elevation: 2.0,
             fillColor: Colors.white,
             shape: CircleBorder(),
