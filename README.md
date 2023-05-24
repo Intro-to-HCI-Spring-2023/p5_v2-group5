@@ -3,7 +3,7 @@
 
 Team Members: Angela Qu, Simba Maxwell, Shitong Cheng, Daniel Ha
 
-GitHub usernames for each team member: angieqx-data, maxwellsimba, haroldCheng1999
+GitHub usernames for each team member: angieqx-data, maxwellsimba, haroldCheng1999, Daniel Ha
 
 Other releavant details about your repository below:
 
