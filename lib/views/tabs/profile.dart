@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social/models/user.dart';
 import 'package:flutter_social/utils/colors.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:flutter_social/views/edit.dart';
+import 'package:flutter_social/views/payment.dart';
 
 class ProfilePage extends StatelessWidget {
   final User user = users[0];
@@ -17,7 +19,7 @@ class ProfilePage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          _buildUserStats('maxwell.s.owino.25@dartmouth.edu',' '),
+          _buildUserStats('maxwell.s.owino.25@dartmouth.edu', ' ', context),
         ],
       ),
     );
@@ -82,14 +84,14 @@ class ProfilePage extends StatelessWidget {
                   children: <Widget>[
                     userImage,
                     SizedBox(width: 10.0),
-                    userNameLocation
+                    userNameLocation,
                   ],
                 ),
               ),
             ),
           ),
         ),
-        userStats
+        userStats,
       ],
     );
 
@@ -107,11 +109,11 @@ class ProfilePage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(LineIcons.cogs, Colors.red, 'Edit Personal Details'),
+              _buildIconTile(LineIcons.cogs, Colors.red, 'Edit Personal Details', true, context),
               hr,
-              _buildIconTile(LineIcons.money, Colors.green, 'Payment Settings'),
+              _buildIconTile(LineIcons.money, Colors.green, 'Payment Settings', true, context),
               hr,
-              _buildIconTile(LineIcons.align_justify, Colors.purpleAccent, 'Verification Center'),
+              _buildIconTile(LineIcons.align_justify, Colors.purpleAccent, 'Verification Center', false, context),
             ],
           ),
         ),
@@ -132,11 +134,11 @@ class ProfilePage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(LineIcons.hand_grab_o, Colors.red, 'Support & Help'),
+              _buildIconTile(LineIcons.hand_grab_o, Colors.red, 'Support & Help', false, context),
               hr,
-              _buildIconTile(LineIcons.mail_forward, Colors.blue, 'About Us'),
+              _buildIconTile(LineIcons.mail_forward, Colors.blue, 'About Us', false, context),
               hr,
-              _buildIconTile(LineIcons.user_plus, Colors.orangeAccent, 'Terms & Conditions'),
+              _buildIconTile(LineIcons.user_plus, Colors.orangeAccent, 'Terms & Conditions', false, context),
               hr,
             ],
           ),
@@ -161,10 +163,11 @@ class ProfilePage extends StatelessWidget {
                         height: 250.0,
                         decoration: BoxDecoration(gradient: primaryGradient),
                       ),
-                      Positioned(top: 100, right: 0, left: 0, child: userInfo)
+                      Positioned(top: 100, right: 0, left: 0, child: userInfo),
                     ],
                   ),
-                  secondCard, thirdCard
+                  secondCard,
+                  thirdCard,
                 ],
               ),
             ),
@@ -174,7 +177,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildUserStats(String name, String value) {
+  Widget _buildUserStats(String name, String value, BuildContext context) {
     return Column(
       children: <Widget>[
         Text(
@@ -197,9 +200,12 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildIconTile(IconData icon, Color color, String title) {
+  Widget _buildIconTile(IconData icon, Color color, String title, bool shouldNavigate, BuildContext context) {
     return ListTile(
-      title: Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+      title: Text(
+        title,
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
       leading: Container(
         height: 30.0,
         width: 30.0,
@@ -215,6 +221,23 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       trailing: Icon(LineIcons.chevron_circle_right),
+      onTap: shouldNavigate ? () {
+        if (title == 'Edit Personal Details') {
+          Navigator.push(
+            context, 
+            MaterialPageRoute(
+              builder: (context) => EditPage(),
+            ),
+          );
+        } else if (title == 'Payment Settings') {
+          Navigator.push(
+            context, 
+            MaterialPageRoute(
+              builder: (context) => PaymentPage(),
+            ),
+          );
+        }
+      } : null,  // If shouldNavigate is false, onTap will do nothing
     );
   }
 }
