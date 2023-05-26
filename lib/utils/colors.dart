@@ -7,10 +7,10 @@ const primaryDark = const Color.fromARGB(255, 96, 181, 246);
 
 const secondaryColor = const Color.fromARGB(255, 89, 186, 255);
 const secondaryLight = const Color.fromARGB(255, 89, 186, 255);
-const secondaryDark = const Color.fromARGB(255, 89, 186, 255);
+const secondaryDark = Color.fromARGB(255, 105, 214, 244);
 
-const Color gradientStart = Color.fromARGB(255, 102, 166, 251);
-const Color gradientEnd = Color.fromARGB(255, 53, 104, 185);
+const Color gradientStart = Color.fromARGB(255, 102, 211, 251);
+const Color gradientEnd = Color.fromARGB(255, 44, 88, 159);
 
 const primaryGradient = const LinearGradient(
   colors: const [gradientStart, gradientEnd],

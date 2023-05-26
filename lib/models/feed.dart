@@ -4,8 +4,12 @@ import 'package:flutter_social/utils/utils.dart';
 class Feed {
   int id, userId;
   String createdAt;
-  String description =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra.';
+  String description1 =
+      'You received a payment of \$35.0 from Simba Maxwell';
+  String description2 =
+      'You received a payment of \$55.0 from  Angela Qu';
+  String description3 =
+      'You received a payment of \$33.20 from  Harold Cheng';
   String bannerImg = AvailableImages.postBanner['assetPath'];
   String userName, userImage;
 

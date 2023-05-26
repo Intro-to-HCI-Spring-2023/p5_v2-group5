@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
     ChatsPage(),
     FeedsPage(),
     NotificationsPage(),
+    ProfilePage(),
     ProfilePage()
   ];
 
@@ -36,23 +37,26 @@ class _HomePageState extends State<HomePage> {
       unselectedItemColor: Colors.grey.withOpacity(0.6),
       elevation: 0.0,
       items: [  
-  BottomNavigationBarItem(
-    icon: Icon(LineIcons.comments),
-    label: 'Chats',
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(Icons.rss_feed),
-    label: 'Feeds',
-  ),
-
-  BottomNavigationBarItem(
-    icon: Icon(LineIcons.camera),
-    label: 'Scan',
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(LineIcons.user),
-    label: 'Profile',
-  ),
+BottomNavigationBarItem(
+  icon: Icon(LineIcons.comments),
+  label: 'Chats',
+),
+BottomNavigationBarItem(
+  icon: Icon(Icons.notifications),  // Change to notification icon
+  label: 'Notifications',
+),
+BottomNavigationBarItem(
+  icon: Icon(Icons.camera),
+  label: 'Feeds',
+),
+BottomNavigationBarItem(
+  icon: Icon(Icons.settings),  // Change to settings icon
+  label: 'Scan',
+),
+BottomNavigationBarItem(
+  icon: Icon(LineIcons.user),
+  label: 'Profile',
+),
 ],
 
     );

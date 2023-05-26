@@ -53,9 +53,9 @@ class FeedCard1 extends StatelessWidget {
     );
 
     final descriptionText = Container(
-      height: 80.0,
+      height: 55.0,
       child: Text(
-        feed.description,
+        feed.description1,
         style: TextStyle(
           color: Colors.grey,
           fontWeight: FontWeight.w600,
@@ -68,29 +68,27 @@ class FeedCard1 extends StatelessWidget {
       color: Colors.grey.withOpacity(0.6),
     );
 
-    final footer = Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Icon(Icons.share),
-        Row(
-          children: <Widget>[
-            Text('256'),
-            SizedBox(
-              width: 3.0,
-            ),
-            Icon(LineIcons.comments),
-            SizedBox(
-              width: 30.0,
-            ),
-            Text('4k'),
-            SizedBox(
-              width: 3.0,
-            ),
-            Icon(LineIcons.heart_o),
-          ],
+    // This is your new roundedButton
+    final roundedButton = Container(
+      margin: EdgeInsets.symmetric(vertical: 5.0),
+      child: MaterialButton(
+        onPressed: () {
+          // handle the onPressed event here
+        },
+        color: Colors.blue,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
-      ],
+        child: Text(
+          "Pay",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
+
 
     return Container(
       height: 300.0,
@@ -143,7 +141,8 @@ class FeedCard1 extends StatelessWidget {
                         ),
                         descriptionText,
                         divider,
-                        footer
+                        roundedButton,  // Add this line
+                        //footer
                       ],
                     ),
                   ),
