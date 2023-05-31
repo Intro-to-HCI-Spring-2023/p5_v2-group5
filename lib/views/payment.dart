@@ -95,7 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          "Payment settings based on location",
+          "Based on location",
           style: TextStyle(
             color: Colors.black,
             fontSize: 17.0,
