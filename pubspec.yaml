@@ -59,6 +59,7 @@ flutter:
    - assets/images/post_banner.jpg
    - assets/images/united-states.png
    - assets/images/pen.png
+   - assets/images/tabulate.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
